@@ -1,0 +1,336 @@
+@use "variables";
+
+// ----------Mixins----------//
+
+@mixin position-center-onImage {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin submit-button-design {
+    border: 1px solid variables.$company-color;
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0);
+    color: inherit;
+    padding: .4em 1.6em;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+// ----------Global---------- //
+
+* {
+    box-sizing: border-box;
+    transition: all ease-in-out 100ms;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+  
+body {
+    height: 100vh;
+    background-color: variables.$black-color;
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+
+#particles-js {
+    position: absolute;
+    height: 100%;
+    z-index: -100;
+}
+
+li:hover {
+    color: variables.$company-color;
+    a:hover{
+        color: variables.$company-color;
+    }
+}
+
+
+.container {
+    background-color: variables.$column-color;
+    color: white;
+    max-width: 50%;
+    max-height: 74vh;
+    margin: auto;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+}
+
+// ----------Header---------- //
+
+.header {
+    img {
+        padding-top: 3em;
+        padding-bottom: 1em;
+    }
+    nav {
+        margin: auto;
+        width: 50%;
+        padding-top: .01em;
+        padding-bottom: .01em;
+        background-color: variables.$column-color;
+        border-bottom: 1px solid variables.$company-color;
+        ul {
+            padding: 0;
+            li {
+                display: inline-block;
+                list-style: none;
+                a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 1em;
+                }
+            }
+        }
+    }
+}
+
+
+// ----------Home---------- //
+
+iframe {
+    display: none;
+}
+
+@media (min-width: 70em) {
+    iframe {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        margin: auto;
+    }
+}
+
+.home-page {
+    h1 {
+        padding: 0em 1em;
+    }
+    p {
+        padding: 0em 5em;
+    }
+}
+
+.event-grid {
+    .event-card {
+        position: relative;
+        display: block;
+        float: left;
+        width: 33.33334%;
+        border: .5em solid variables.$column-color;
+        height: 31vh;
+        h2 {
+            opacity: 0;
+            @include position-center-onImage();
+            top: 25%;
+            text-align: center;
+        }
+        .event-date {
+            opacity: 0;
+            text-align: left;
+            @include position-center-onImage();
+            top: 35%;
+        }
+        .event-more {
+            opacity: 0;
+            @include position-center-onImage();
+            @include submit-button-design();
+            top: 55%;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.event-description {
+    background-color: variables.$card-color;
+    color: white;
+    padding: .5em .5em;
+    display: none;
+    p {
+        font-size: 12px;
+        margin-top: 0;
+    }
+    a {
+        text-decoration: none;
+        color: variables.$company-color;
+        padding: .3em 1em;
+    }
+    a:hover {
+        color: white;
+        background-color: variables.$company-color;
+        border-radius: 1em;
+    }
+}
+
+.event-card:hover {
+    h2, .event-date, .event-more {
+        opacity: 1;
+    }
+    img {
+        opacity: 25%;
+    }
+}
+
+.event-more:hover {
+    box-shadow: 0px .5px 15px .5px variables.$company-color;
+}
+
+//----------Details----------//
+
+h1 {
+    color: white;
+}
+.details-information {
+    background-color: variables.$column-color;
+    margin: auto;
+    width: 50%;
+    padding: 2em;
+    color: white;
+    ul {
+        padding: 0;
+    }
+    li {
+        list-style: none;
+        padding: 0;
+    }
+}
+.details-image {
+    background-color: variables.$column-color;
+    margin: auto;
+    width: 50%;
+    img {
+        width: 400px;
+    }
+}
+
+//----------About----------//
+.information-company {
+    padding: 5em;
+}
+.information-vd {
+    p {
+        padding-left: 23%;
+        padding-right: 23%;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        a:hover {
+            color: variables.$company-color;
+    }
+    }
+    img {
+        width: 100%;
+    }
+}
+.contact-vd {
+    border: 1px solid variables.$company-color;
+}
+.submit-container {
+    display: none;
+    margin: auto;
+    width: 50%;
+    margin-top: 2em;
+    padding: 2em;
+    background-color: variables.$company-color;
+}
+
+.information-team {
+    img {
+        width: 100%;
+    }
+}
+
+//-----------Create----------//
+
+.create-description {
+    h2 {
+        padding: 1em 5em;
+    }
+}
+
+//-----------Form----------//
+
+form {
+    margin: auto;
+    width: 50%;
+    text-align: left;
+    padding-top: 1em;
+    label {
+        margin-left: 5em;
+        padding-right: 2em;
+    }
+    input, textarea, label, select{
+        margin-bottom: 2em;
+        vertical-align: top;
+    }
+    .input-mail {
+        margin-left: 1em;
+    }
+    .input-message {
+        margin-left: -1.7em;
+        padding-right: .7em;
+    }
+    .send-button {
+        @include submit-button-design();
+        margin-left: 12.5em;
+    }
+    .button-create {
+        @include submit-button-design();
+        margin-left: 12em;
+    }
+    .send-button:hover, .button-create:hover {
+        box-shadow: 0px .5px 15px .5px variables.$company-color;
+    }
+    .input-date {
+        padding-left: 2.45em;
+        margin-left: .7em;
+    }
+    .input-about {
+        padding-left: .8em;
+        margin-left: .1em;
+    }
+    .input-agenda {
+        padding-left: .8em;
+        margin-left: -.9em;
+    }
+    .input-category {
+        padding-left: 3em;
+        padding-right: 3em;
+        margin-left: -1em;
+    }
+    .input-images {
+        width: 2.5em;
+        margin-left: -.5em;
+        margin-right: 1em;
+    }
+}
+
+
+//----------Footer----------//
+footer {
+    ul {
+        color: white;
+        li {
+            display: inline-block;
+            list-style: none;
+            padding: 3em;
+            cursor: pointer;
+        }
+    }
+}

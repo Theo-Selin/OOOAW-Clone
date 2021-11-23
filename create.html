@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Create Event</title>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div class="header">
+        <a href="/">
+            <img class="logo-image" src="/graphics/logo/oooaw-logga-2017.png" alt="image of logo">
+        </a>
+        <div class="nav-menu">
+            <nav>
+                <ul>
+                    <li class="Home">
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li class="Event">
+                        <a href="event.html">Event</a>
+                    </li>
+                    <li class="Create">
+                        <a href="create.html">Create</a>
+                    </li>
+                    <li class="About">
+                        <a href="about.html">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="create-description">
+            <h1>Create your own event</h1>
+            <h2>Be part of our community and create your own event 
+                for people to gather around</h2>
+        </div>
+        <form class="form form-create">
+            <div>
+                <label for="input-name">Name</label>
+                <input type="text" class="input-name">
+            </div>
+            <div>
+                <label for="input-date">Date</label>
+                <input type="date" class="input-date">
+            </div>
+            <div>
+                <label class="label-about" for="input-about">About</label>
+                <textarea type="text" class="input-about"></textarea>
+            </div>
+            <div>
+                <label class="label-agenda" for="input-agenda">Agenda</label>
+                <textarea type="text" class="input-agenda"></textarea>
+            </div>
+            <div>
+                <label for="input-images">Images</label>
+                <input type="file" class="input-images">
+                <input type="file" class="input-images">
+                <input type="file" class="input-images">
+                <input type="file" class="input-images">
+            </div>
+            <div>
+                <label for="input-category">category</label>
+                <select class="input-category">
+                    <option value="afterwork">After Work</option>
+                    <option value="festival">Festival</option>
+                    <option value="concert">Concert</option>
+                </select>
+            </div>
+            <div>
+                <input class="button-create"type="submit" value="Create">
+            </div>
+        </form>
+        <div>
+            <footer>
+                <ul>
+                    <li>
+                        <span class="material-icons">catching_pokemon</span>
+                    </li>
+                    <li>
+                        <span class="material-icons">sports_martial_arts</span>
+                    </li>
+                    <li>
+                        <span class="material-icons">cruelty_free</span>
+                    </li>
+                    <li>
+                        <span class="material-icons">public</span>
+                    </li>
+                    <li>
+                        <span class="material-icons">mood</span>
+                    </li>
+                    <li>
+                        <span class="material-icons">self_improvement</span>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+    <script type="text/javascript" src="particles.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
